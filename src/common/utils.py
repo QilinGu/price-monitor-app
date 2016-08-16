@@ -1,4 +1,5 @@
 from passlib.hash import pbkdf2_sha512
+import re
 
 class Utils(object):
 
@@ -22,4 +23,9 @@ class Utils(object):
         """
         return pbkdf2_sha512.verify(password, hashed_password)
 
+    @staticmethod
+    def email_is_valid(email):
+        # ^[\w-]+@([\w-]+\.)+[\w]+$
+        email_address_matcher = re.compile('^[\w-]+@([\w-]+\.)+[\w]+$')
+        return True if email_address_matcher.match(email) else False
 
