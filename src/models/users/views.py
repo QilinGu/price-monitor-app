@@ -1,10 +1,26 @@
 from flask import Blueprint
+from flask import redirect
+from flask import render_template
+from flask import request
+from flask import session
+from flask import url_for
+
+from src.models.users.user import User
 
 user_blueprint = Blueprint('users', __name__)
 
-@user_blueprint.route('/login')
+@user_blueprint.route('/login', methods=['GET','POST'])
 def login_user():
-    pass
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['hashed']
+
+        if User.is_login_valid(email, password):
+            session['email'] = email
+            return redirect(url_for('.user_alerts'))
+    else:
+        return render_template('users/login.html')
+
 
 @user_blueprint.route('/register')
 def register_user():
