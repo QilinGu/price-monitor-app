@@ -24,7 +24,7 @@ class User(object):
         :param password: SHA512 hashed
         :return: True-valid, False-invalid
         """
-        user_data = Database.find_one('users', {'email':email})
+        user_data = Database.find_one('users', query={'email':email})
         if user_data is None:
             # email doesn't exist
             raise UserErrors.UserNotExistsError('Your user name does not exist!')

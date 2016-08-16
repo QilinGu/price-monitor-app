@@ -1,2 +1,5 @@
 src/__pycache__/
+src/common/__pycache__/
+src/models/__pycache__/
+src/models/users/__pycache__/
 .idea/
