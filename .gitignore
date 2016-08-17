@@ -2,5 +2,9 @@ src/__pycache__/
 src/common/__pycache__/
 src/models/__pycache__/
 src/models/users/__pycache__/
+src/models/alerts/__pycache__/
+src/models/items/__pycache__/
+src/models/stores/__pycache__/
 .idea/
 src/playground/
+src/models/alerts/constants.py
