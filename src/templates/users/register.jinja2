@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="form-size">
-        <form>
+        <form method="post" action="{{ url_for('users.register_user') }}">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" name="email" class="form-control" id="email" placeholder="Please type your email...">
