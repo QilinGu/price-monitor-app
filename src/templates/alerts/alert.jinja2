@@ -9,7 +9,7 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <a href="{{ alert.item.url }}" class="btn btn-default" role="button">Visit Site</a>
-            <a href="{{ url_for('alerts.edit_alert', alert_id=alert._id) }}" class="btn btn-default" role="button">Edit Alert</a>
+            <a href="{{ url_for('alerts.edit_alert', alert_id=alert._id) }}" class="btn btn-warning" role="button">Edit Alert</a>
             {% if alert.active %}
                 <a href="{{ url_for('alerts.deactivate_alert', alert_id=alert._id) }}" class="btn btn-danger" role="button">Deactivate Alert</a>
             {% else %}
