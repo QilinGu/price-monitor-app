@@ -36,7 +36,8 @@ class Alert(object):
         last_updated_limit = datetime.datetime.utcnow() - datetime.timedelta(minutes=mimutes_since_update)
         return [cls(**elem) for elem in Database.find(AlertConstants.COLLECTION,
                                                       {"last_checked":
-                                                           {"$lte": last_updated_limit}
+                                                           {"$lte": last_updated_limit},
+                                                       "active": True
                                                        })]
 
 
