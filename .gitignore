@@ -7,4 +7,3 @@ src/models/items/__pycache__/
 src/models/stores/__pycache__/
 .idea/
 src/playground/
-src/models/alerts/constants.py
